@@ -24,6 +24,7 @@ class Product extends Component {
       name,
       description,
       price,
+      acfImage,
     } = data.wpProduct
 
     const { galleryLightboxOpen } = this.state
@@ -43,6 +44,12 @@ class Product extends Component {
           slide={this.state.slideIndex}
           type="image"
         />
+        {acfImage && acfImage.acfSampleImage.sourceUrl && (
+          <div>
+            ACF Image Field
+            <img src={acfImage.acfSampleImage.sourceUrl} alt="ACF Test" width="100px" height="68px" />
+          </div>
+        )}
       </div>
     )
   }
